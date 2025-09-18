@@ -1,0 +1,17 @@
+
+def checkboxParamName = 'aa' // Replace with your actual checkbox parameter name
+
+return """
+  <input onMouseOut="this.style.color='black'" onMouseOver="this.style.color='blue'" type="button" value="Select All" onclick="
+    var checkboxes = document.querySelector('input[type=hidden][value=${checkboxParamName}] ~ div').querySelectorAll('input');
+    for (var i = 0; i < checkboxes.length; i++) {
+      checkboxes[i].checked = true;
+    }
+  ">
+  <input onMouseOut="this.style.color='black'" onMouseOver="this.style.color='blue'" type="button" value="Deselect All" onclick="
+    var checkboxes = document.querySelector('input[type=hidden][value=${checkboxParamName}] ~ div').querySelectorAll('input');
+    for (var i = 0; i < checkboxes.length; i++) {
+      checkboxes[i].checked = false;
+    }
+  ">
+"""
